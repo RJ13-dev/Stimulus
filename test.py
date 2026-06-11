@@ -14,7 +14,7 @@ title = tk.Label(
     bg="#FDF6EC",
     fg="#C16B47"  # Terracotta
 )
-title.pack(pady=100)  # pady = vertical spacing
+title.pack(pady=200)  # pady = vertical spacing
 
 # 3. Add a subtitle
 subtitle = tk.Label(
