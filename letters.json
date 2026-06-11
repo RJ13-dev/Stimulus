@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "text": "You arrived with one suitcase and the expression of someone who has recently made a very brave decision and is trying not to think too hard about it. The room is yours now — all four walls, the slightly creaky floorboard by the door, the window that faces the courtyard. The tree outside is unreasonably leafy for a tree with nothing to prove. Rooms take on the feeling of whoever lives in them. This one is waiting to find out who you are. The sketchbook in the second drawer has been waiting longer.",
+    "hint": "art",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Open the sketchbook and fill one full page. Draw anything — a shape, the window, something imaginary. One full page.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "sketchbook_open"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Open the sketchbook and make one mark. A scribble counts. A dot counts. Starting counts.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "sketchbook_on_desk"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Just open the sketchbook. Look at the blank page. Close it. That is enough for today.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "sketchbook_on_shelf"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "A mark is how everything begins — maps, signatures, cave paintings, entire civilisations. Yours just happens to be in a slightly dusty sketchbook in Wren. There are worse origin stories. The kettle in the kitchen works, by the way. I mention this only because some people forget that warmth is something they are allowed to give themselves.",
+    "hint": "self_care",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Make something warm from scratch. Brew proper tea, make hot chocolate, warm up something on the stove. Sit with it, no phone, until it is finished.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "kettle_on"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Make a warm drink and sit by the window with it. Just that. No multitasking.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "mug_on_table"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Drink something warm today. Anything. Even just water that is not cold.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "window_open"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "There is a recipe pinned to the kitchen wall. Lemon soup. Left by someone before you, before me, before whoever lived here before that. It has the look of a recipe that has never been made — optimistic ingredient list, slightly smudged instructions. I have a theory that unmade recipes are just small adventures nobody has gotten around to yet. The lemons are in season. The kitchen is right there.",
+    "hint": "cooking",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Cook a full meal from scratch today. Does not have to be the lemon soup. Anything real, made by hand, start to finish.",
+        "coins": 5,
+        "reward_type": "gift",
+        "room_effect": "herb_pots"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Make something simple in the kitchen. Eggs, toast with real effort, a proper sandwich. Something that required actually doing it.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "recipe_on_wall"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Read the recipe on the wall. Just read it. Imagine making it. Let that be enough for now.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "recipe_noted"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "The library two streets over is run by a man who recommends books based entirely on what you are wearing. I wore a yellow coat once and he gave me three books about bees. They were excellent. I am not telling you to go. I am just mentioning that you have that look — like someone who used to read more than they currently do. Libraries are patient. They will wait.",
+    "hint": "reading",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Read for one full hour today. A book, something you have been meaning to start, anything with pages. One uninterrupted hour.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "book_nightstand"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Read 10 pages of anything. Does not have to be a book. An article, something saved, something old.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "book_on_shelf"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Find something you want to read. Look it up, download it, pull it off a shelf. Just find it. Reading it can come later.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "list_on_desk"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "text": "Ten pages is a window opened in a room that has been shut for too long. I notice these things. There is a specific kind of tiredness that is not about sleep — it is about spending too long being someone other than yourself. The cure is quietly doing something that is entirely, privately yours. Not impressive. Not useful to anyone else. Just yours.",
+    "hint": "self_care",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Spend one hour doing something just for the feeling of it. Draw, stretch, hum, rearrange your room, stare out the window properly. No goal. Just time given to yourself.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "chair_by_window"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Do something small that is entirely yours for 20 minutes. The thing nobody else needs to know about.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "candle_lit"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Do one thing today that is just for you. Even something tiny. A stretch. A song. A moment.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "window_open"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "text": "Learning is a strange thing. Unlike clutter it does not take up space — it just quietly changes how you see everything else. You have the look of someone who used to know this and is just remembering. There is no deadline on remembering.",
+    "hint": "learning",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Spend an hour learning something you are genuinely curious about. A topic, a skill, a language, anything. Go deep enough that you forget what time it is.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "study_corner"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Learn one small thing today. A word, a fact, a technique. Look it up properly. Sit with it.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "note_pinned"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Write down one thing you have always wanted to understand. Just the question. The answer can come another time.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "list_on_desk"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "text": "A question written down is already halfway to an answer. I find this annoying when I need to hear it most, which is how I know it is true. The body also knows things the mind forgets — it remembers what it feels like to be taken care of. Today feels like a day for remembering that.",
+    "hint": "self_care",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Give yourself a full self-care hour. Long shower, face mask, proper skincare, a nap without guilt, a slow walk with no destination. The whole thing.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "soft_glow"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Do one proper self-care thing today. Not rushed. Not as a transaction. Just because you are worth the time.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "candle_lit"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Drink enough water today. That is it. That is the whole task.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "mug_on_table"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "text": "Water is underrated. So is sitting still. So is the particular satisfaction of finishing something — even something small. There is a chapter somewhere with your name on it, a page that ends with a proper full stop, a task that closes rather than trails off. Those small completions add up to something. I have seen it happen.",
+    "hint": "finishing",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Finish something today. A chapter, a drawing, a recipe, a lesson. All the way to the end.",
+        "coins": 5,
+        "reward_type": "gift",
+        "room_effect": "cozy_blanket"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Make meaningful progress on something. Not finished but further than you were.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "note_pinned"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Start something you have been putting off. Just the first step. That is all.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "list_on_desk"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "text": "Finishing things is a quiet superpower. Most people do not mention it because it does not look dramatic from the outside. From the inside it feels like setting something down you did not realise you were carrying. The room looks different after those finishes — not to anyone else. But rooms remember. Yours is remembering.",
+    "hint": "hobby",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Dedicate one hour to a hobby you are growing. Drawing, cooking, reading, studying — whatever yours is becoming. Full hour, no interruptions.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "hobby_deepening"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Spend 30 minutes with your growing thing. The one that is starting to feel like yours.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "sketchbook_on_desk"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Touch your hobby today. Open the sketchbook. Read one page. Stir something on the stove. Just show up to it.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "window_open"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "text": "Showing up is most of it. Nobody tells you this enough. The grand gestures get remembered but it is the quiet showing up — on tired days, on foggy days, on days where nothing feels worth it — that actually builds things. You have been showing up. I notice. The room notices. The tree, insufferably, also notices.",
+    "hint": "reflection",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Write down everything you have done for yourself since arriving in Wren. Not an achievement list. Just a quiet record. Everything counts.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "journal_nightstand"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Write down three things you have enjoyed or felt good about recently. Small things welcome. Especially small things.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "note_pinned"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Think of one moment this week that was yours. Just hold it for a minute. You do not have to write it down.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "soft_glow"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "text": "Records matter. Not for anyone else — for you, six months from now, when you forget that this is when it started. Today feels like a good day for something nourishing. The edible kind.",
+    "hint": "cooking",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Cook a full nourishing meal. Something that takes time, something that smells good, something that feels like an act of care toward yourself.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "herb_pots"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Make yourself a proper meal today. Not grabbed, not rushed. Sat down and eaten slowly.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "recipe_on_wall"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Eat something today that actually makes you feel good. Not just convenient. Actually good.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "mug_on_table"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "text": "There is a version of studying that feels like punishment and a version that feels like exploring a place nobody told you about yet. The second kind is the one worth finding. It usually starts with a question you actually care about, not one someone assigned you.",
+    "hint": "learning",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Study something you genuinely want to understand for one hour. Go at your own pace. No test at the end. Just curiosity followed honestly.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "study_corner"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Spend 20 minutes going deeper into something you are curious about. A topic, a skill, a rabbit hole worth following.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "note_pinned"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Watch or read one thing today that teaches you something. Anything. Even a short video about something odd.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "list_on_desk"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "text": "Curiosity compounds. One thing leads to another leads to another leads to a version of yourself who knows things she did not expect to know and finds that quietly thrilling. That version is not far from here. She is in fact very close. She is probably sitting in a room with a slightly better view than she realises.",
+    "hint": "creative",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Do something creative for a full hour. Draw, write, cook something experimental, arrange things, make something exist that did not before.",
+        "coins": 5,
+        "reward_type": "gift",
+        "room_effect": "fairy_lights"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Make something small and creative today. A doodle, a recipe twist, a rearranged shelf. Anything that has your fingerprints on it.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "sketchbook_on_desk"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Notice one beautiful or interesting thing today. That is the whole task. Just notice it.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "window_open"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "text": "Beautiful things are everywhere in Wren if you are looking. Most people are not. You are starting to be. I notice this the way I notice most things — quietly, without making a big deal of it, and then mentioning it in a letter. Today I think deserves something slow and restorative.",
+    "hint": "self_care",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Give yourself a full slow morning or evening. No rushing. Tea, something to read or draw, no agenda. A whole stretch of time that belongs entirely to you.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "soft_glow"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Carve out 30 minutes of completely unhurried time today. Not productive. Not useful. Just yours.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "chair_by_window"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Sit somewhere comfortable for 10 minutes and do nothing useful. That is allowed. That is the task.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "candle_lit"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "text": "Unhurried time is not wasted time. I want to say this clearly because someone has to. You are building something here in Wren — not quickly, not loudly, not in a way that would impress anyone who needs impressing. But the room knows. The sketchbook knows. The kettle, frankly, knows. Keep going.",
+    "hint": "hobby",
+    "cards": [
+      {
+        "label": "Big",
+        "task_text": "Spend one hour on whatever you love most right now. Your thing. The one that is becoming yours. All of it, for a full hour.",
+        "coins": 5,
+        "reward_type": "coins",
+        "room_effect": "hobby_deepening"
+      },
+      {
+        "label": "Medium",
+        "task_text": "Do the thing you have enjoyed most this week, again. Once more, because you liked it, because that is reason enough.",
+        "coins": 3,
+        "reward_type": "coins",
+        "room_effect": "sketchbook_on_desk"
+      },
+      {
+        "label": "Tiny",
+        "task_text": "Tell yourself one kind thing today. Out loud or in your head. Just one.",
+        "coins": 1,
+        "reward_type": "coins",
+        "room_effect": "soft_glow"
+      }
+    ]
+  }
+]
