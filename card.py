@@ -6,3 +6,6 @@ class Card:
         self.coins = coins            # 5, 3, or 1
         self.reward_type = reward_type  # "coins" or "gift"
         self.room_effect = room_effect  # e.g. "sketchbook_on_desk"
+
+    def __str__(self):
+        return (f"The card says {self.task_text}")
