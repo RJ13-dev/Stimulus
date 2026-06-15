@@ -1,8 +1,7 @@
 """
-Logigrame — Skincare Edition  (PySide6)
+Profile Perfect — Skincare Edition  (PySide6)
 ==============================================
 Infinite Replayability Edition (Crash-Free Side Panel Architecture)
-Reskinned to match the Stimulus cozy / lamplit world.
 """
 
 import sys
@@ -18,44 +17,73 @@ from PySide6.QtGui  import QCursor
 
 MAX_LIVES = 2
 
-# ── Palette ── warm, lamplit, wood-and-amber to match the attic world ────────
+# ── Palette ────────────────────────────────────────────────────────────────
 P = {
-    "bg":           "#2A1D10",   # deep warm wood
-    "bg_card":      "#F7EEDD",   # warm cream "paper"
-    "bg_panel":     "#EFE2CB",   # slightly deeper cream
-    "bg_header":    "#1F140A",   # dark lamplit header
-    "border":       "#D8C3A0",
-    "border_dark":  "#B89A6E",
+    "bg":           "#FAF7F2",
+    "bg_card":      "#FFFFFF",
+    "bg_panel":     "#F3EDE4",
+    "bg_header":    "#F9F0E8",
+    "border":       "#E2D5C8",
+    "border_dark":  "#C8B8A8",
 
-    "cell_idle":    "#FBF4E6",
-    "cell_active":  "#FFF1D6",
-    "cell_correct": "#E8F1DC",   # warm sage-green, not clinical
-    "cell_wrong":   "#F6E0D2",   # warm terracotta-tinted
-    "cell_locked":  "#F3E6C4",   # aged-paper gold
+    "cell_idle":    "#FFFFFF",
+    "cell_active":  "#FFF5EC",
+    "cell_correct": "#E6F7EE",
+    "cell_wrong":   "#FDEAEA",
+    "cell_locked":  "#EEF4FF",
 
-    "panel_border": "#C4884E",
-    "pill_idle":    "#FBF4E6",
-    "pill_hover":   "#FCE9C9",
-    "pill_used_bg": "#EBE2D4",
-    "pill_used_fg": "#A8977F",
+    "panel_border": "#D4845A",
+    "pill_idle":    "#FAF7F2",
+    "pill_hover":   "#FDEBD8",
+    "pill_used_bg": "#F0EDE9",
+    "pill_used_fg": "#B0A098",
 
-    "accent":       "#C4884E",   # warm amber/brass
-    "accent_deep":  "#A06A36",
-    "correct":      "#6E8B3D",   # mossy green
-    "wrong":        "#C25A45",   # warm brick
-    "locked_fg":    "#A07A2C",   # antique gold
+    "accent":       "#D4845A",
+    "correct":      "#2E9E62",
+    "wrong":        "#D44F4F",
+    "locked_fg":    "#4A80CC",
 
-    "text_strong":  "#2C2014",
-    "text_body":    "#5A4733",
-    "text_dim":     "#9A856A",
-    "text_white":   "#FFF6E4",
-    "heart_on":     "#D4845A",   # warm coral, ties to accent
-    "heart_off":    "#5A4733",
-    "divider":      "#E2D3B6",
+    "text_strong":  "#2C2420",
+    "text_body":    "#5A4E47",
+    "text_dim":     "#9E8E85",
+    "text_white":   "#FFFFFF",
+    "heart_on":     "#E8607A",
+    "heart_off":    "#DDD0C8",
+    "divider":      "#EDE5DC",
 }
 
 # ── Theme Pool ─────────────────────────────────────────────────────────────
 THEME_POOL = [
+    # {
+    #     "subtitle": "Morning Routines",
+    #     "subjects": ["Serena", "Maya", "Priya"],
+    #     "attributes": ["Skin Type", "Routine Step", "Hero Ingredient"],
+    #     "options": {
+    #         "Skin Type":        ["Oily", "Dry", "Sensitive"],
+    #         "Routine Step":     ["Moisturise", "Exfoliate", "Cleanse"],
+    #         "Hero Ingredient":  ["Niacinamide", "Hyaluronic Acid", "Centella Asiatica"],
+    #     },
+    #     "clue_templates": [
+    #         ("✨", "Direct", "Midday T-zone shine confirms {Serena} manages {Skin Type:Serena} skin."),
+    #         ("💧", "Linked", "The individual handling {Routine Step} relies on {Hero Ingredient} matching context."),
+    #         ("🫧", "Linked", "Addressing {Skin Type} with {Hero Ingredient} keeps the barrier resilient."),
+    #     ]
+    # },
+    # {
+    #     "subtitle": "Night Treatments",
+    #     "subjects": ["Zara", "Lena", "Aisha"],
+    #     "attributes": ["Skin Concern", "Treatment", "Active Ingredient"],
+    #     "options": {
+    #         "Skin Concern":      ["Acne", "Hyperpigmentation", "Anti-Ageing"],
+    #         "Treatment":         ["Face Mask", "Facial Oil", "Serum"],
+    #         "Active Ingredient": ["Salicylic Acid", "Vitamin C", "Retinol"],
+    #     },
+    #     "clue_templates": [
+    #         ("🌿", "Linked", "Targeting {Skin Concern} effectively requires applying a custom evening {Treatment}."),
+    #         ("🍊", "Direct", "{Active Ingredient:Lena} is carefully integrated into {Lena}'s skincare regimen."),
+    #         ("⏳", "Linked", "The profile dealing with {Skin Concern} pairs perfectly with {Active Ingredient}."),
+    #     ]
+    # },
     {
         "subtitle": "Sun Protection",
         "subjects": ["Leo", "Chloe", "Zane"],
@@ -66,9 +94,9 @@ THEME_POOL = [
             "Active Filter":  ["Zinc Oxide", "Titanium Dioxide", "Tinosorb S"],
         },
         "clue_templates": [
-            ("\u2600\ufe0f", "Direct", "{Chloe} specifically opted for a specialized {Formulation:Chloe} base."),
-            ("\U0001f30a", "Linked", "The {UV Focus} protection routine is delivered via an elegant {Formulation} format."),
-            ("\U0001f52c", "Linked", "Formulating for {UV Focus} demands using mineral-based {Active Filter} filters."),
+            ("☀️", "Direct", "{Chloe} specifically opted for a specialized {Formulation:Chloe} base."),
+            ("🌊", "Linked", "The {UV Focus} protection routine is delivered via an elegant {Formulation} format."),
+            ("🔬", "Linked", "Formulating for {UV Focus} demands using mineral-based {Active Filter} filters."),
         ]
     }
 ]
@@ -82,44 +110,44 @@ def generate_procedural_level(theme_data, level_number):
         "options": {},
         "solution": {}
     }
-
+    
     for attr in shuffled["attributes"]:
         opts = list(theme_data["options"][attr])
         random.shuffle(opts)
         shuffled["options"][attr] = opts
-
+        
         for i, subj in enumerate(shuffled["subjects"]):
             shuffled["solution"][(subj, attr)] = opts[i]
-
+            
     l_subj = random.choice(shuffled["subjects"])
     l_attr = random.choice(shuffled["attributes"])
     l_val = shuffled["solution"][(l_subj, l_attr)]
     shuffled["locked"] = (l_subj, l_attr, l_val)
-
-    clues = [("\U0001f512", "Pre-filled", f"{l_subj}'s documentation confirms their {l_attr} is {l_val}.")]
-
+    
+    clues = [("🔒", "Pre-filled", f"{l_subj}'s documentation confirms their {l_attr} is {l_val}.")]
+    
     sol = shuffled["solution"]
     subjs = shuffled["subjects"]
     attrs = shuffled["attributes"]
-
+    
     for icon, tag, template in theme_data["clue_templates"]:
         text = template
-
+        
         for s in subjs:
             for a in attrs:
                 placeholder = f"{{{a}:{s}}}"
                 if placeholder in text:
                     text = text.replace(placeholder, sol[(s, a)])
-
+                    
         for s in subjs:
             text = text.replace(f"{{{s}}}", s)
-
+            
         idx = random.randint(0, len(subjs) - 1)
         for a in attrs:
             text = text.replace(f"{{{a}}}", sol[(subjs[idx], a)])
-
+            
         clues.append((icon, tag, text))
-
+        
     shuffled["clues"] = clues
     return shuffled
 
@@ -132,22 +160,22 @@ QLabel {{ background: transparent; color: {P['text_body']}; }}
 
 QFrame#header {{
     background: {P['bg_header']};
-    border-bottom: 1px solid {P['accent_deep']};
+    border-bottom: 1px solid {P['border']};
 }}
 QFrame#grid_card {{
     background: {P['bg_card']};
     border: 1px solid {P['border']};
-    border-radius: 14px;
+    border-radius: 12px;
 }}
 QFrame#side_panel {{
     background: {P['bg_card']};
     border: 1px solid {P['border']};
-    border-radius: 14px;
+    border-radius: 12px;
 }}
 QFrame#clue_card {{
     background: {P['bg_card']};
     border: 1px solid {P['border']};
-    border-radius: 12px;
+    border-radius: 10px;
 }}
 QFrame#clue_row {{
     background: {P['bg_panel']};
@@ -166,7 +194,7 @@ QPushButton#pill {{
 QPushButton#pill:hover {{
     background: {P['pill_hover']};
     border-color: {P['accent']};
-    color: {P['accent_deep']};
+    color: {P['accent']};
 }}
 QPushButton#pill:disabled {{
     background: {P['pill_used_bg']};
@@ -177,12 +205,12 @@ QPushButton#nav_btn {{
     background: {P['accent']};
     color: {P['text_white']};
     border: none;
-    border-radius: 9px;
+    border-radius: 8px;
     padding: 9px 28px;
     font-size: 13px;
     font-weight: bold;
 }}
-QPushButton#nav_btn:hover {{ background: {P['accent_deep']}; }}
+QPushButton#nav_btn:hover {{ background: #C07040; }}
 """
 
 # ── Choice Panel ────────────────────────────────────────────────────────────
@@ -191,7 +219,7 @@ class ChoicePanel(QFrame):
         super().__init__(parent)
         self.setObjectName("side_panel")
         self.setFixedWidth(210)
-
+        
         self._lay = QVBoxLayout(self)
         self._lay.setContentsMargins(16, 20, 16, 20)
         self._lay.setSpacing(12)
@@ -214,10 +242,10 @@ class ChoicePanel(QFrame):
         self._btn_lay = QVBoxLayout(self._btn_container)
         self._btn_lay.setContentsMargins(0, 10, 0, 0)
         self._btn_lay.setSpacing(8)
-
+        
         self._container_wrapper = self._btn_container
         self._lay.addWidget(self._btn_container)
-
+        
         self._lay.addStretch()
         self._container_wrapper.setVisible(False)
         self._on_pick = None
@@ -225,9 +253,9 @@ class ChoicePanel(QFrame):
     def show_choices(self, subj: str, attr: str, options: list[str], used: set, on_pick):
         self._on_pick = on_pick
         self._title.setText(f"{subj.upper()}\n({attr.upper()})")
-        self._title.setStyleSheet(f"font-size:12px; font-weight:bold; color:{P['accent_deep']}; text-align:center;")
+        self._title.setStyleSheet(f"font-size:12px; font-weight:bold; color:{P['accent']}; text-align:center;")
         self._desc.setText("Select the correct value:")
-
+        
         while self._btn_lay.count():
             item = self._btn_lay.takeAt(0)
             if item.widget():
@@ -257,11 +285,11 @@ class ChoicePanel(QFrame):
 class CellWidget(QFrame):
     STATES = {
         "idle":    (P["cell_idle"],    P["border"],      P["text_dim"],    "1px"),
-        "active":  (P["cell_active"],  P["accent"],      P["accent_deep"], "2px"),
+        "active":  (P["cell_active"],  P["accent"],      P["accent"],      "2px"),
         "correct": (P["cell_correct"], P["correct"],     P["correct"],     "2px"),
         "wrong":   (P["cell_wrong"],   P["wrong"],       P["wrong"],       "2px"),
         "locked":  (P["cell_locked"],  P["locked_fg"],   P["locked_fg"],   "1.5px"),
-        "reveal":  ("#FBEFD6",         P["accent"],      P["text_body"],   "1px"),
+        "reveal":  ("#FFF8EE",         P["accent"],      P["text_body"],   "1px"),
     }
 
     def __init__(self, subj, attr, on_clicked, parent=None):
@@ -335,6 +363,7 @@ class LevelScreen(QWidget):
         self.game_over   = False
         self.active_cell = None
 
+        # Fix: ChoicePanel is cleanly owned locally by the level screen instance
         self.choice_panel = ChoicePanel(self)
 
         self._build_ui()
@@ -361,7 +390,7 @@ class LevelScreen(QWidget):
 
         left_flow.addWidget(self._make_clues_card())
         workspace.addLayout(left_flow, stretch=1)
-
+        
         workspace.addWidget(self.choice_panel)
         root_lay.addLayout(workspace)
 
@@ -372,18 +401,18 @@ class LevelScreen(QWidget):
         lay = QHBoxLayout(hdr)
         lay.setContentsMargins(28, 0, 28, 0)
 
-        title = QLabel("LOGIGRAME")
-        title.setStyleSheet(f"font-size:20px; font-weight:bold; color:{P['accent']}; letter-spacing:2px;")
+        title = QLabel("PROFILE PERFECT")
+        title.setStyleSheet(f"font-size:20px; font-weight:bold; color:{P['accent']};")
         lay.addWidget(title)
 
-        sub = QLabel(f"{self.ld['title']}  \u00b7  {self.ld['subtitle']}")
+        sub = QLabel(f"{self.ld['title']}  ·  {self.ld['subtitle']}")
         sub.setStyleSheet(f"font-size:11px; color:{P['text_dim']};")
         lay.addWidget(sub)
         lay.addStretch()
 
         self.heart_labels = []
         for _ in range(MAX_LIVES):
-            h = QLabel("\u2665")
+            h = QLabel("♥")
             h.setStyleSheet(f"font-size:20px; color:{P['heart_on']};")
             lay.addWidget(h)
             self.heart_labels.append(h)
@@ -397,7 +426,7 @@ class LevelScreen(QWidget):
         lay.setContentsMargins(20, 16, 20, 20)
         lay.setSpacing(10)
 
-        sec = QLabel("\u25b8  CUSTOMER PROFILES")
+        sec = QLabel("▸  CUSTOMER PROFILES")
         sec.setStyleSheet(f"font-size:10px; font-weight:bold; color:{P['text_dim']}; letter-spacing:1px;")
         lay.addWidget(sec)
 
@@ -445,7 +474,7 @@ class LevelScreen(QWidget):
         outer.setContentsMargins(20, 14, 20, 14)
         outer.setSpacing(8)
 
-        sec = QLabel("\u25b8  CLUES")
+        sec = QLabel("▸  CLUES")
         sec.setStyleSheet(f"font-size:10px; font-weight:bold; color:{P['text_dim']}; letter-spacing:1px;")
         outer.addWidget(sec)
 
@@ -466,7 +495,7 @@ class LevelScreen(QWidget):
             tc = QVBoxLayout()
             tc.setSpacing(1)
             tl = QLabel(tag)
-            tl.setStyleSheet(f"font-size:9px; font-weight:bold; color:{P['accent_deep']}; letter-spacing:0.5px;")
+            tl.setStyleSheet(f"font-size:9px; font-weight:bold; color:{P['accent']}; letter-spacing:0.5px;")
             tc.addWidget(tl)
             bl = QLabel(text)
             bl.setWordWrap(True)
@@ -503,7 +532,7 @@ class LevelScreen(QWidget):
             on_pick=self._on_pick
         )
         self.status_lbl.setText(f"Select an option from the right menu for {cell.subj} ({cell.attr})")
-        self.status_lbl.setStyleSheet(f"font-size:12px; color:{P['accent_deep']};")
+        self.status_lbl.setStyleSheet(f"font-size:12px; color:{P['accent']};")
 
     def _on_pick(self, subj: str, attr: str, val: str):
         if self.game_over or not self.active_cell:
@@ -516,7 +545,7 @@ class LevelScreen(QWidget):
         if val == self.solution[(subj, attr)]:
             self.filled[(subj, attr)] = val
             cell.set_value(val, "correct")
-            self.status_lbl.setText(f"\u2713 Correct! {subj} \u00b7 {attr} = {val}")
+            self.status_lbl.setText(f"✓ Correct! {subj} · {attr} = {val}")
             self.status_lbl.setStyleSheet(f"font-size:12px; color:{P['correct']};")
             self._check_win()
         else:
@@ -525,9 +554,9 @@ class LevelScreen(QWidget):
             if 0 <= idx < len(self.heart_labels):
                 self.heart_labels[idx].setStyleSheet(f"font-size:20px; color:{P['heart_off']};")
             cell.flash_wrong(val)
-            msg = f"\u2717 {val} is not right for {subj}."
+            msg = f"✗ {val} is not right for {subj}."
             if self.lives == 1:
-                msg += "  \u26a0 Last life!"
+                msg += "  ⚠ Last life!"
             self.status_lbl.setText(msg)
             self.status_lbl.setStyleSheet(f"font-size:12px; color:{P['wrong']};")
             if self.lives <= 0:
@@ -549,7 +578,7 @@ class LevelScreen(QWidget):
             for attr in self.attributes:
                 if (subj, attr) not in self.filled:
                     self.cell_widgets[(subj, attr)].set_value(self.solution[(subj, attr)], "reveal")
-        self.status_lbl.setText("\U0001f494 Out of lives \u2014 answers have been revealed.")
+        self.status_lbl.setText("💔 Out of lives — answers have been revealed.")
         self.status_lbl.setStyleSheet(f"font-size:12px; color:{P['wrong']};")
         QTimer.singleShot(2200, lambda: self.on_complete(won=False, level_index=self.level_index))
 
@@ -596,7 +625,7 @@ class TransitionScreen(QWidget):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Logigrame")
+        self.setWindowTitle("Profile Perfect — Skincare Edition")
         self.setMinimumSize(940, 640)
         self.setStyleSheet(SS)
 
@@ -607,10 +636,11 @@ class MainWindow(QMainWindow):
 
     def _load_level(self, level_num: int):
         self._clear_stack()
-
+        
         raw_theme = random.choice(THEME_POOL)
         procedural_data = generate_procedural_level(raw_theme, level_num)
-
+        
+        # Screen now creates and handles its own local ChoicePanel instance automatically
         screen = LevelScreen(procedural_data, level_num, on_complete=self._on_complete)
         self.stack.addWidget(screen)
         self.stack.setCurrentWidget(screen)
@@ -618,15 +648,15 @@ class MainWindow(QMainWindow):
     def _on_complete(self, won: bool, level_index: int):
         if won:
             self._show_transition(
-                title    = "\U0001f389 Level Complete!",
+                title    = "🎉 Level Complete!",
                 subtitle = f"Prepping matrix challenge run #{level_index + 1}",
                 body     = "Every single pairing matches up perfectly!\n\nLet's generate your next random combination configuration map.",
-                btn_text = "Next Procedural Run \u2192",
+                btn_text = "Next Procedural Run →",
                 on_next  = lambda: self._load_level(level_index + 1),
             )
         else:
             self._show_transition(
-                title    = "\U0001f494 Out of Lives",
+                title    = "💔 Out of Lives",
                 subtitle = f"Matrix calculation failed on puzzle challenge #{level_index}",
                 body     = "Tip: use your locked anchor cell data to calculate alignments via analytical deduction paths.",
                 btn_text = "Retry Shuffled Seed",

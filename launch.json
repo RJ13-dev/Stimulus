@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Stimulus — run game",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/maingame.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}
