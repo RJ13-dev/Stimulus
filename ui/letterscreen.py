@@ -227,7 +227,7 @@ class LetterScreen(QMainWindow):
         print(f"[letter] exists? {os.path.exists(VIDEO_PATH)}")
         if os.path.exists(VIDEO_PATH):
             self.player.setSource(QUrl.fromLocalFile(VIDEO_PATH))
-            self.player.setPlaybackRate(1.5)   # play at 1.5x speed
+            self.player.setPlaybackRate(3.5)   # play at 1.5x speed
             print("[letter] source set, rate 1.5x, calling play()")
             self.player.play()
             # Duration-INDEPENDENT safety net: even if the video never loads
