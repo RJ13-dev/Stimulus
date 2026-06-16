@@ -16,7 +16,13 @@
         "task_text": "Open the sketchbook and make one mark. A scribble counts. A dot counts. Starting counts.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "sketchbook_on_desk"
+        "room_effect": "sketchbook_on_desk",
+        "data": {
+          "title": "Thumbnail to Masterpiece",
+          "slots": ["Rough Sketch", "Inking Lines", "Adding Color"],
+          "correctOrder": [0, 1, 2],
+          "label": "Lay down your basic shapes before committing to lines and color."
+        }
       },
       {
         "label": "Tiny",
@@ -44,7 +50,13 @@
         "task_text": "Make a warm drink and sit by the window with it. Just that. No multitasking.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "mug_on_table"
+        "room_effect": "mug_on_table",
+        "data": {
+          "title": "Wind-Down Ritual",
+          "slots": ["Put Phone Away", "Brew Chamomile Tea", "Read a Book Chapter"],
+          "correctOrder": [0, 1, 2],
+          "label": "Disconnect from digital noise before introducing a physical comfort."
+        }
       },
       {
         "label": "Tiny",
@@ -72,7 +84,13 @@
         "task_text": "Make something simple in the kitchen. Eggs, toast with real effort, a proper sandwich. Something that required actually doing it.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "recipe_on_wall"
+        "room_effect": "recipe_on_wall",
+        "data": {
+          "title": "Mise en Place",
+          "slots": ["Prep Ingredients", "Simmer on Stove", "Garnish & Serve"],
+          "correctOrder": [0, 1, 2],
+          "label": "Chop and organize everything before turning on the heat."
+        }
       },
       {
         "label": "Tiny",
@@ -100,7 +118,13 @@
         "task_text": "Read 10 pages of anything. Does not have to be a book. An article, something saved, something old.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "book_on_shelf"
+        "room_effect": "book_on_shelf",
+        "data": {
+          "title": "Deep Comprehension",
+          "slots": ["Skim Headings", "Active Reading", "Summarize Key Takeaways"],
+          "correctOrder": [0, 1, 2],
+          "label": "Get a bird's-eye view of the text before diving deep into the prose."
+        }
       },
       {
         "label": "Tiny",
@@ -114,7 +138,7 @@
   {
     "id": 5,
     "text": "Ten pages is a window opened in a room that has been shut for too long. I notice these things. There is a specific kind of tiredness that is not about sleep — it is about spending too long being someone other than yourself. The cure is quietly doing something that is entirely, privately yours. Not impressive. Not useful to anyone else. Just yours.",
-    "hint": "self_care",
+    "hint": "skincare",
     "cards": [
       {
         "label": "Big",
@@ -128,7 +152,13 @@
         "task_text": "Do something small that is entirely yours for 20 minutes. The thing nobody else needs to know about.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "candle_lit"
+        "room_effect": "candle_lit",
+        "data": {
+          "title": "Morning Barrier Protection",
+          "slots": ["Hydrating Cleanser", "Hyaluronic Serum", "Broad Spectrum SPF"],
+          "correctOrder": [0, 1, 2],
+          "label": "Always clear away impurities before locking in hydration and environmental defense."
+        }
       },
       {
         "label": "Tiny",
@@ -142,7 +172,7 @@
   {
     "id": 6,
     "text": "Learning is a strange thing. Unlike clutter it does not take up space — it just quietly changes how you see everything else. You have the look of someone who used to know this and is just remembering. There is no deadline on remembering.",
-    "hint": "learning",
+    "hint": "studying",
     "cards": [
       {
         "label": "Big",
@@ -156,7 +186,13 @@
         "task_text": "Learn one small thing today. A word, a fact, a technique. Look it up properly. Sit with it.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "note_pinned"
+        "room_effect": "note_pinned",
+        "data": {
+          "title": "The Pomodoro Block",
+          "slots": ["25m Focused Study", "5m Brain Break", "Review Flashcards"],
+          "correctOrder": [0, 1, 2],
+          "label": "Execute uninterrupted focus blocks before resting and testing memory retention."
+        }
       },
       {
         "label": "Tiny",
@@ -170,7 +206,7 @@
   {
     "id": 7,
     "text": "A question written down is already halfway to an answer. I find this annoying when I need to hear it most, which is how I know it is true. The body also knows things the mind forgets — it remembers what it feels like to be taken care of. Today feels like a day for remembering that.",
-    "hint": "self_care",
+    "hint": "exercise",
     "cards": [
       {
         "label": "Big",
@@ -184,7 +220,13 @@
         "task_text": "Do one proper self-care thing today. Not rushed. Not as a transaction. Just because you are worth the time.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "candle_lit"
+        "room_effect": "candle_lit",
+        "data": {
+          "title": "Leg Day Protocol",
+          "slots": ["Dynamic Warmup", "Weighted Squats", "Foam Rolling"],
+          "correctOrder": [0, 1, 2],
+          "label": "Prepare the joints dynamically before moving heavy loads, then downregulate."
+        }
       },
       {
         "label": "Tiny",
@@ -198,7 +240,7 @@
   {
     "id": 8,
     "text": "Water is underrated. So is sitting still. So is the particular satisfaction of finishing something — even something small. There is a chapter somewhere with your name on it, a page that ends with a proper full stop, a task that closes rather than trails off. Those small completions add up to something. I have seen it happen.",
-    "hint": "finishing",
+    "hint": "makeup",
     "cards": [
       {
         "label": "Big",
@@ -212,7 +254,13 @@
         "task_text": "Make meaningful progress on something. Not finished but further than you were.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "note_pinned"
+        "room_effect": "note_pinned",
+        "data": {
+          "title": "Flawless Base Routine",
+          "slots": ["Hydrating Primer", "Liquid Foundation", "Setting Powder"],
+          "correctOrder": [0, 1, 2],
+          "label": "Prep the canvas skin texture before smoothing tone and locking in the liquids."
+        }
       },
       {
         "label": "Tiny",
@@ -226,7 +274,7 @@
   {
     "id": 9,
     "text": "Finishing things is a quiet superpower. Most people do not mention it because it does not look dramatic from the outside. From the inside it feels like setting something down you did not realise you were carrying. The room looks different after those finishes — not to anyone else. But rooms remember. Yours is remembering.",
-    "hint": "hobby",
+    "hint": "work",
     "cards": [
       {
         "label": "Big",
@@ -240,7 +288,13 @@
         "task_text": "Spend 30 minutes with your growing thing. The one that is starting to feel like yours.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "sketchbook_on_desk"
+        "room_effect": "sketchbook_on_desk",
+        "data": {
+          "title": "Deep Work Setup",
+          "slots": ["Check Task List", "Block Calendar", "Draft Deliverables"],
+          "correctOrder": [0, 1, 2],
+          "label": "Identify objectives, claim your time boundaries, and produce high-value output."
+        }
       },
       {
         "label": "Tiny",
@@ -254,7 +308,7 @@
   {
     "id": 10,
     "text": "Showing up is most of it. Nobody tells you this enough. The grand gestures get remembered but it is the quiet showing up — on tired days, on foggy days, on days where nothing feels worth it — that actually builds things. You have been showing up. I notice. The room notices. The tree, insufferably, also notices.",
-    "hint": "reflection",
+    "hint": "travelling",
     "cards": [
       {
         "label": "Big",
@@ -268,7 +322,13 @@
         "task_text": "Write down three things you have enjoyed or felt good about recently. Small things welcome. Especially small things.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "note_pinned"
+        "room_effect": "note_pinned",
+        "data": {
+          "title": "Departure Flight Checklist",
+          "slots": ["Confirm Visa / Docs", "Pack Light Suitcase", "Head to Terminal"],
+          "correctOrder": [0, 1, 2],
+          "label": "Verify entry and legal status before physically organizing items and heading outbound."
+        }
       },
       {
         "label": "Tiny",
@@ -282,7 +342,7 @@
   {
     "id": 11,
     "text": "Records matter. Not for anyone else — for you, six months from now, when you forget that this is when it started. Today feels like a good day for something nourishing. The edible kind.",
-    "hint": "cooking",
+    "hint": "hobby",
     "cards": [
       {
         "label": "Big",
@@ -296,7 +356,13 @@
         "task_text": "Make yourself a proper meal today. Not grabbed, not rushed. Sat down and eaten slowly.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "recipe_on_wall"
+        "room_effect": "recipe_on_wall",
+        "data": {
+          "title": "Hobby Incubation",
+          "slots": ["Gather Basic Gear", "Watch Beginner Tutorial", "First Messy Attempt"],
+          "correctOrder": [0, 1, 2],
+          "label": "Acquire low-cost essentials, understand the core framework, then dive into raw execution."
+        }
       },
       {
         "label": "Tiny",
@@ -310,7 +376,7 @@
   {
     "id": 12,
     "text": "There is a version of studying that feels like punishment and a version that feels like exploring a place nobody told you about yet. The second kind is the one worth finding. It usually starts with a question you actually care about, not one someone assigned you.",
-    "hint": "learning",
+    "hint": "mindfulness",
     "cards": [
       {
         "label": "Big",
@@ -324,7 +390,13 @@
         "task_text": "Spend 20 minutes going deeper into something you are curious about. A topic, a skill, a rabbit hole worth following.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "note_pinned"
+        "room_effect": "note_pinned",
+        "data": {
+          "title": "Grounding Protocol",
+          "slots": ["Breathe Deeply", "Scan Body Tension", "Observe Local Sounds"],
+          "correctOrder": [0, 1, 2],
+          "label": "Anchor physiological patterns with oxygen, isolate tension locations, then observe external reality."
+        }
       },
       {
         "label": "Tiny",
@@ -338,7 +410,7 @@
   {
     "id": 13,
     "text": "Curiosity compounds. One thing leads to another leads to another leads to a version of yourself who knows things she did not expect to know and finds that quietly thrilling. That version is not far from here. She is in fact very close. She is probably sitting in a room with a slightly better view than she realises.",
-    "hint": "creative",
+    "hint": "finance",
     "cards": [
       {
         "label": "Big",
@@ -352,7 +424,13 @@
         "task_text": "Make something small and creative today. A doodle, a recipe twist, a rearranged shelf. Anything that has your fingerprints on it.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "sketchbook_on_desk"
+        "room_effect": "sketchbook_on_desk",
+        "data": {
+          "title": "Paycheck Flow",
+          "slots": ["Automate Savings", "Clear Fixed Bills", "Assign Discretionary Pocket"],
+          "correctOrder": [0, 1, 2],
+          "label": "Pay your future self first, cover survival necessities, then budget guilt-free dynamic spending."
+        }
       },
       {
         "label": "Tiny",
@@ -366,7 +444,7 @@
   {
     "id": 14,
     "text": "Beautiful things are everywhere in Wren if you are looking. Most people are not. You are starting to be. I notice this the way I notice most things — quietly, without making a big deal of it, and then mentioning it in a letter. Today I think deserves something slow and restorative.",
-    "hint": "self_care",
+    "hint": "social",
     "cards": [
       {
         "label": "Big",
@@ -380,7 +458,13 @@
         "task_text": "Carve out 30 minutes of completely unhurried time today. Not productive. Not useful. Just yours.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "chair_by_window"
+        "room_effect": "chair_by_window",
+        "data": {
+          "title": "Connection Bridge",
+          "slots": ["Drop Low-Stakes Text", "Set Up Coffee Date", "Active Listening Conversation"],
+          "correctOrder": [0, 1, 2],
+          "label": "Initiate simple outreach, arrange intentional space, then give uninterrupted internal focus."
+        }
       },
       {
         "label": "Tiny",
@@ -394,7 +478,7 @@
   {
     "id": 15,
     "text": "Unhurried time is not wasted time. I want to say this clearly because someone has to. You are building something here in Wren — not quickly, not loudly, not in a way that would impress anyone who needs impressing. But the room knows. The sketchbook knows. The kettle, frankly, knows. Keep going.",
-    "hint": "hobby",
+    "hint": "organization",
     "cards": [
       {
         "label": "Big",
@@ -408,7 +492,13 @@
         "task_text": "Do the thing you have enjoyed most this week, again. Once more, because you liked it, because that is reason enough.",
         "coins": 3,
         "reward_type": "coins",
-        "room_effect": "sketchbook_on_desk"
+        "room_effect": "sketchbook_on_desk",
+        "data": {
+          "title": "Declutter Attack",
+          "slots": ["Empty the Space", "Sort Keep vs Discard", "Wipe Down Surface"],
+          "correctOrder": [0, 1, 2],
+          "label": "Assess the absolute volume of items before isolating targets and cleaning down basic surfaces."
+        }
       },
       {
         "label": "Tiny",

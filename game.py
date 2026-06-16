@@ -21,7 +21,7 @@ import json_handling as file
 class Game:
     def __init__(self):
         # ---- persistent session state ----
-        self.eve = Eve(0)
+        self.eve = Eve(200)
 
         self.letters: list[Letter] = [
             Letter(x["id"], x["text"], x["hint"], x["cards"])
