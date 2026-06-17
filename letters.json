@@ -9,7 +9,34 @@
         "task_text": "Open the sketchbook and fill one full page. Draw anything — a shape, the window, something imaginary. One full page.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "sketchbook_open"
+        "room_effect": "sketchbook_open",
+        "data": {
+          "subtitle": "Art Studio Setup",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Medium Focus", "Surface Choice", "Core Tool"],
+          "options": {
+            "Medium Focus": ["Oil Paint", "Charcoal", "Watercolors"],
+            "Surface Choice": ["Stretched Linen", "Toned Paper", "Cold-Press Sheet"],
+            "Core Tool": ["Bristle Brush", "Blending Stump", "Sable Round"]
+          },
+          "solution": {
+            "(\"Leo\", \"Medium Focus\")": "Charcoal",
+            "(\"Leo\", \"Surface Choice\")": "Toned Paper",
+            "(\"Leo\", \"Core Tool\")": "Sable Round",
+            "(\"Chloe\", \"Medium Focus\")": "Oil Paint",
+            "(\"Chloe\", \"Surface Choice\")": "Stretched Linen",
+            "(\"Chloe\", \"Core Tool\")": "Bristle Brush",
+            "(\"Zane\", \"Medium Focus\")": "Watercolors",
+            "(\"Zane\", \"Surface Choice\")": "Cold-Press Sheet",
+            "(\"Zane\", \"Core Tool\")": "Blending Stump"
+          },
+          "clues": [
+            ["🎨", "Clue", "Chloe's primary focus is working with Oil Paint."],
+            ["📜", "Clue", "The Charcoal setup requires a Toned Paper backing."],
+            ["✏️", "Clue", "Zane requests a Cold-Press Sheet for his project."],
+            ["🖌️", "Clue", "The Oil Paint medium is strictly paired with a Bristle Brush."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -43,7 +70,34 @@
         "task_text": "Make something warm from scratch. Brew proper tea, make hot chocolate, warm up something on the stove. Sit with it, no phone, until it is finished.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "kettle_on"
+        "room_effect": "kettle_on",
+        "data": {
+          "subtitle": "Evening Decompression",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Comfort Drink", "Ambiance Source", "Cozy Element"],
+          "options": {
+            "Comfort Drink": ["Chai Latte", "Chamomile Tea", "Hot Cocoa"],
+            "Ambiance Source": ["Scented Candle", "Dimmed Lamp", "Vinyl Record"],
+            "Cozy Element": ["Weighted Wrap", "Fleece Blanket", "Knit Slippers"]
+          },
+          "solution": {
+            "(\"Leo\", \"Comfort Drink\")": "Hot Cocoa",
+            "(\"Leo\", \"Ambiance Source\")": "Dimmed Lamp",
+            "(\"Leo\", \"Cozy Element\")": "Knit Slippers",
+            "(\"Chloe\", \"Comfort Drink\")": "Chai Latte",
+            "(\"Chloe\", \"Ambiance Source\")": "Scented Candle",
+            "(\"Chloe\", \"Cozy Element\")": "Weighted Wrap",
+            "(\"Zane\", \"Comfort Drink\")": "Chamomile Tea",
+            "(\"Zane\", \"Ambiance Source\")": "Vinyl Record",
+            "(\"Zane\", \"Cozy Element\")": "Fleece Blanket"
+          },
+          "clues": [
+            ["🕯️", "Clue", "Chloe loves decompressing with a Scented Candle lit."],
+            ["☕", "Clue", "Preparing Hot Cocoa goes hand in hand with switching on a Dimmed Lamp."],
+            ["🎶", "Clue", "Zane prefers spinning a Vinyl Record during his wind-down."],
+            ["🍯", "Clue", "The Chai Latte order matches perfectly with a Weighted Wrap."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -77,7 +131,34 @@
         "task_text": "Cook a full meal from scratch today. Does not have to be the lemon soup. Anything real, made by hand, start to finish.",
         "coins": 5,
         "reward_type": "gift",
-        "room_effect": "herb_pots"
+        "room_effect": "herb_pots",
+        "data": {
+          "subtitle": "Kitchen Exploration",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Recipe Project", "Primary Herb", "Cookware Used"],
+          "options": {
+            "Recipe Project": ["Handmade Pasta", "Lemon Soup", "Risotto Base"],
+            "Primary Herb": ["Sweet Basil", "Fresh Dill", "Rosemary Sprig"],
+            "Cookware Used": ["Rolling Pin", "Dutch Oven", "Copper Pan"]
+          },
+          "solution": {
+            "(\"Leo\", \"Recipe Project\")": "Lemon Soup",
+            "(\"Leo\", \"Primary Herb\")": "Fresh Dill",
+            "(\"Leo\", \"Cookware Used\")": "Copper Pan",
+            "(\"Chloe\", \"Recipe Project\")": "Handmade Pasta",
+            "(\"Chloe\", \"Primary Herb\")": "Sweet Basil",
+            "(\"Chloe\", \"Cookware Used\")": "Rolling Pin",
+            "(\"Zane\", \"Recipe Project\")": "Risotto Base",
+            "(\"Zane\", \"Primary Herb\")": "Rosemary Sprig",
+            "(\"Zane\", \"Cookware Used\")": "Dutch Oven"
+          },
+          "clues": [
+            ["🍝", "Clue", "Chloe tackles the Handmade Pasta recipe from scratch."],
+            ["🍋", "Clue", "The Lemon Soup requires an addition of Fresh Dill."],
+            ["🌿", "Clue", "Zane snips a Fresh Rosemary Sprig for his dish."],
+            ["🍲", "Clue", "The Handmade Pasta recipe is designed to feature a Rolling Pin."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -111,7 +192,34 @@
         "task_text": "Read for one full hour today. A book, something you have been meaning to start, anything with pages. One uninterrupted hour.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "book_nightstand"
+        "room_effect": "book_nightstand",
+        "data": {
+          "subtitle": "Nook Chronicles",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Book Genre", "Reading Spot", "Companion Drink"],
+          "options": {
+            "Book Genre": ["Historical Fiction", "Nature Essay", "Mystery Novel"],
+            "Reading Spot": ["Window Bench", "Armchair", "Park Blanket"],
+            "Companion Drink": ["Earl Grey Tea", "Black Coffee", "Warm Cider"]
+          },
+          "solution": {
+            "(\"Leo\", \"Book Genre\")": "Nature Essay",
+            "(\"Leo\", \"Reading Spot\")": "Armchair",
+            "(\"Leo\", \"Companion Drink\")": "Warm Cider",
+            "(\"Chloe\", \"Book Genre\")": "Historical Fiction",
+            "(\"Chloe\", \"Reading Spot\")": "Window Bench",
+            "(\"Chloe\", \"Companion Drink\")": "Earl Grey Tea",
+            "(\"Zane\", \"Book Genre\")": "Mystery Novel",
+            "(\"Zane\", \"Reading Spot\")": "Park Blanket",
+            "(\"Zane\", \"Companion Drink\")": "Black Coffee"
+          },
+          "clues": [
+            ["🪟", "Clue", "Chloe stakes out her spot on the cozy Window Bench."],
+            ["🐝", "Clue", "The Nature Essay book is being read over in the Armchair."],
+            ["🌳", "Clue", "Zane heads outdoors with a soft Park Blanket."],
+            ["📖", "Clue", "The Historical Fiction selection belongs on the Window Bench with Earl Grey Tea."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -145,7 +253,34 @@
         "task_text": "Spend one hour doing something just for the feeling of it. Draw, stretch, hum, rearrange your room, stare out the window properly. No goal. Just time given to yourself.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "chair_by_window"
+        "room_effect": "chair_by_window",
+        "data": {
+          "subtitle": "Vanity Essentials",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Skin Focus", "Core Ingredient", "Product Type"],
+          "options": {
+            "Skin Focus": ["Oil Control", "Barrier Repair", "Deep Hydration"],
+            "Core Ingredient": ["Salicylic Acid", "Ceramides", "Glycerin Liquid"],
+            "Product Type": ["Clay Masque", "Rich Cream", "Water Gel"]
+          },
+          "solution": {
+            "(\"Leo\", \"Skin Focus\")": "Barrier Repair",
+            "(\"Leo\", \"Core Ingredient\")": "Ceramides",
+            "(\"Leo\", \"Product Type\")": "Water Gel",
+            "(\"Chloe\", \"Skin Focus\")": "Oil Control",
+            "(\"Chloe\", \"Core Ingredient\")": "Salicylic Acid",
+            "(\"Chloe\", \"Product Type\")": "Clay Masque",
+            "(\"Zane\", \"Skin Focus\")": "Deep Hydration",
+            "(\"Zane\", \"Core Ingredient\")": "Glycerin Liquid",
+            "(\"Zane\", \"Product Type\")": "Rich Cream"
+          },
+          "clues": [
+            ["🧴", "Clue", "Chloe focuses heavily on a tailored Oil Control routine."],
+            ["🧪", "Clue", "A Barrier Repair target relies deeply on building Ceramides."],
+            ["🚰", "Clue", "Zane targets basic skin hydration using raw Glycerin Liquid."],
+            ["🧼", "Clue", "The Oil Control protocol prioritizes incorporating a Clay Masque."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -179,7 +314,34 @@
         "task_text": "Spend an hour learning something you are genuinely curious about. A topic, a skill, a language, anything. Go deep enough that you forget what time it is.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "study_corner"
+        "room_effect": "study_corner",
+        "data": {
+          "subtitle": "Knowledge Quest",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Subject Matter", "Study Method", "Note Medium"],
+          "options": {
+            "Subject Matter": ["World History", "Linguistics", "Astrophysics"],
+            "Study Method": ["Flashcard Drill", "Audio Lecture", "Mind-Map Grid"],
+            "Note Medium": ["Spiral Notebook", "Notepad App", "Graph Journal"]
+          },
+          "solution": {
+            "(\"Leo\", \"Subject Matter\")": "Linguistics",
+            "(\"Leo\", \"Study Method\")": "Audio Lecture",
+            "(\"Leo\", \"Note Medium\")": "Graph Journal",
+            "(\"Chloe\", \"Subject Matter\")": "World History",
+            "(\"Chloe\", \"Study Method\")": "Flashcard Drill",
+            "(\"Chloe\", \"Note Medium\")": "Spiral Notebook",
+            "(\"Zane\", \"Subject Matter\")": "Astrophysics",
+            "(\"Zane\", \"Study Method\")": "Mind-Map Grid",
+            "(\"Zane\", \"Note Medium\")": "Notepad App"
+          },
+          "clues": [
+            ["📜", "Clue", "Chloe tackles a long syllabus covering World History."],
+            ["🎧", "Clue", "A focus on Linguistics maps directly onto streaming an Audio Lecture."],
+            ["🧠", "Clue", "Zane lays out a massive, multi-tiered Mind-Map Grid on his desk."],
+            ["🗂️", "Clue", "The World History workload forces the use of a Spiral Notebook."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -213,7 +375,34 @@
         "task_text": "Give yourself a full self-care hour. Long shower, face mask, proper skincare, a nap without guilt, a slow walk with no destination. The whole thing.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "soft_glow"
+        "room_effect": "soft_glow",
+        "data": {
+          "subtitle": "Daily Movement",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Training Style", "Recovery Tool", "Hydration Vessel"],
+          "options": {
+            "Training Style": ["Power Lifting", "Mobility Flow", "Interval Sprints"],
+            "Recovery Tool": ["Lacrosse Ball", "Yoga Block", "Massage Gun"],
+            "Hydration Vessel": ["Steel Tumbler", "Glass Jug", "Squeeze Bottle"]
+          },
+          "solution": {
+            "(\"Leo\", \"Training Style\")": "Mobility Flow",
+            "(\"Leo\", \"Recovery Tool\")": "Yoga Block",
+            "(\"Leo\", \"Hydration Vessel\")": "Squeeze Bottle",
+            "(\"Chloe\", \"Training Style\")": "Power Lifting",
+            "(\"Chloe\", \"Recovery Tool\")": "Lacrosse Ball",
+            "(\"Chloe\", \"Hydration Vessel\")": "Steel Tumbler",
+            "(\"Zane\", \"Training Style\")": "Interval Sprints",
+            "(\"Zane\", \"Recovery Tool\")": "Massage Gun",
+            "(\"Zane\", \"Hydration Vessel\")": "Glass Jug"
+          },
+          "clues": [
+            ["🏋️", "Clue", "Chloe spends her session working on heavy Power Lifting."],
+            ["🧘", "Clue", "A slow, intentional Mobility Flow uses a standard foam Yoga Block."],
+            ["🔫", "Clue", "Zane powers up a high-frequency Massage Gun to restore his legs."],
+            ["⚾", "Clue", "The Power Lifting routine relies on rolling out with a Steel Tumbler near at hand."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -247,7 +436,34 @@
         "task_text": "Finish something today. A chapter, a drawing, a recipe, a lesson. All the way to the end.",
         "coins": 5,
         "reward_type": "gift",
-        "room_effect": "cozy_blanket"
+        "room_effect": "cozy_blanket",
+        "data": {
+          "subtitle": "Cosmetic Artistry",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Beauty Accent", "Key Applicator", "Finish Style"],
+          "options": {
+            "Beauty Accent": ["Velvet Pout", "Graphic Liner", "Dewy Highlight"],
+            "Key Applicator": ["Fluffy Blender", "Angled Brush", "Damp Sponge"],
+            "Finish Style": ["Matte Veil", "Satiny Sheen", "Glowy Mist"]
+          },
+          "solution": {
+            "(\"Leo\", \"Beauty Accent\")": "Graphic Liner",
+            "(\"Leo\", \"Key Applicator\")": "Angled Brush",
+            "(\"Leo\", \"Finish Style\")": "Satiny Sheen",
+            "(\"Chloe\", \"Beauty Accent\")": "Velvet Pout",
+            "(\"Chloe\", \"Key Applicator\")": "Fluffy Blender",
+            "(\"Chloe\", \"Finish Style\")": "Matte Veil",
+            "(\"Zane\", \"Beauty Accent\")": "Dewy Highlight",
+            "(\"Zane\", \"Key Applicator\")": "Damp Sponge",
+            "(\"Zane\", \"Finish Style\")": "Glowy Mist"
+          },
+          "clues": [
+            ["💋", "Clue", "Chloe selects a bold Velvet Pout for her statement color."],
+            ["📐", "Clue", "An explicit Graphic Liner aesthetic demands a steady Angled Brush."],
+            ["🧽", "Clue", "Zane uses a bouncy, freshly Damp Sponge to set his design."],
+            ["💄", "Clue", "The Velvet Pout option maps cleanly to a Matte Veil finish style."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -281,7 +497,34 @@
         "task_text": "Dedicate one hour to a hobby you are growing. Drawing, cooking, reading, studying — whatever yours is becoming. Full hour, no interruptions.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "hobby_deepening"
+        "room_effect": "hobby_deepening",
+        "data": {
+          "subtitle": "Task Deep-Dive",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Project Type", "Focus Strategy", "Tracking Grid"],
+          "options": {
+            "Project Type": ["Client Pitch", "Code Refactor", "Data Cleanse"],
+            "Focus Strategy": ["Deep Work Sprint", "Time Box", "Inbox Zero Mode"],
+            "Tracking Grid": ["Kanban Board", "Gantt Chart", "Bullet Journal"]
+          },
+          "solution": {
+            "(\"Leo\", \"Project Type\")": "Code Refactor",
+            "(\"Leo\", \"Focus Strategy\")": "Time Box",
+            "(\"Leo\", \"Tracking Grid\")": "Bullet Journal",
+            "(\"Chloe\", \"Project Type\")": "Client Pitch",
+            "(\"Chloe\", \"Focus Strategy\")": "Deep Work Sprint",
+            "(\"Chloe\", \"Tracking Grid\")": "Kanban Board",
+            "(\"Zane\", \"Project Type\")": "Data Cleanse",
+            "(\"Zane\", \"Focus Strategy\")": "Inbox Zero Mode",
+            "(\"Zane\", \"Tracking Grid\")": "Gantt Chart"
+          },
+          "clues": [
+            ["📊", "Clue", "Chloe puts her brain power into building a dynamic Client Pitch."],
+            ["💻", "Clue", "Running a thorough Code Refactor relies entirely on a strict Time Box."],
+            ["📥", "Clue", "Zane clears out lingering items by shifting to Inbox Zero Mode."],
+            ["⚡", "Clue", "The Client Pitch deck layout is tackled inside a Kanban Board mapping workflow."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -315,7 +558,34 @@
         "task_text": "Write down everything you have done for yourself since arriving in Wren. Not an achievement list. Just a quiet record. Everything counts.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "journal_nightstand"
+        "room_effect": "journal_nightstand",
+        "data": {
+          "subtitle": "Wanderlust Planning",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Destination", "Luggage Style", "Transit Route"],
+          "options": {
+            "Destination": ["Coastal Village", "Alpine Lodge", "Desert Oasis"],
+            "Luggage Style": ["Hard Roller", "Hiker Pack", "Leather Duffel"],
+            "Transit Route": ["Scenic Rail", "Express Flight", "Coastal Highway"]
+          },
+          "solution": {
+            "(\"Leo\", \"Destination\")": "Alpine Lodge",
+            "(\"Leo\", \"Luggage Style\")": "Hiker Pack",
+            "(\"Leo\", \"Transit Route\")": "Scenic Rail",
+            "(\"Chloe\", \"Destination\")": "Coastal Village",
+            "(\"Chloe\", \"Luggage Style\")": "Hard Roller",
+            "(\"Chloe\", \"Transit Route\")": "Express Flight",
+            "(\"Zane\", \"Destination\")": "Desert Oasis",
+            "(\"Zane\", \"Luggage Style\")": "Leather Duffel",
+            "(\"Zane\", \"Transit Route\")": "Coastal Highway"
+          },
+          "clues": [
+            ["🌊", "Clue", "Chloe coordinates booking tickets to a serene Coastal Village."],
+            ["🌲", "Clue", "Heading up to an Alpine Lodge means traveling with a rugged Hiker Pack."],
+            ["🏜️", "Clue", "Zane tracks down a premium, reinforced Leather Duffel."],
+            ["🧳", "Clue", "The Coastal Village itinerary assumes a departure via an Express Flight."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -349,7 +619,34 @@
         "task_text": "Cook a full nourishing meal. Something that takes time, something that smells good, something that feels like an act of care toward yourself.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "herb_pots"
+        "room_effect": "herb_pots",
+        "data": {
+          "subtitle": "Leisure Crafts",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Creative Outlet", "Sourced Tool", "Material Component"],
+          "options": {
+            "Creative Outlet": ["Leather Craft", "Wood Whittling", "Clay Throwing"],
+            "Sourced Tool": ["Pricking Iron", "Detail Chisel", "Wire Cutter"],
+            "Material Component": ["Waxed Linen", "Balsa Block", "Terracotta Body"]
+          },
+          "solution": {
+            "(\"Leo\", \"Creative Outlet\")": "Wood Whittling",
+            "(\"Leo\", \"Sourced Tool\")": "Detail Chisel",
+            "(\"Leo\", \"Material Component\")": "Balsa Block",
+            "(\"Chloe\", \"Creative Outlet\")": "Leather Craft",
+            "(\"Chloe\", \"Sourced Tool\")": "Pricking Iron",
+            "(\"Chloe\", \"Material Component\")": "Waxed Linen",
+            "(\"Zane\", \"Creative Outlet\")": "Clay Throwing",
+            "(\"Zane\", \"Sourced Tool\")": "Wire Cutter",
+            "(\"Zane\", \"Material Component\")": "Terracotta Body"
+          },
+          "clues": [
+            ["💼", "Clue", "Chloe loves dedicating quiet afternoons to basic Leather Craft."],
+            ["🪵", "Clue", "Getting into Wood Whittling means learning to safety-handle a Detail Chisel."],
+            ["🧱", "Clue", "Zane clears off his bench to fit a manual, heavy Wire Cutter."],
+            ["🪡", "Clue", "The practice of Leather Craft hinges directly on aligning Waxed Linen strands."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -383,7 +680,34 @@
         "task_text": "Study something you genuinely want to understand for one hour. Go at your own pace. No test at the end. Just curiosity followed honestly.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "study_corner"
+        "room_effect": "study_corner",
+        "data": {
+          "subtitle": "Slowing the Mind",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Mindful Anchor", "Somatic Goal", "Session Timer"],
+          "options": {
+            "Mindful Anchor": ["Walking Pulse", "Breath Counting", "Sound Isolation"],
+            "Somatic Goal": ["Relaxed Shoulders", "Calmed Heartbeat", "Grounded Posture"],
+            "Session Timer": ["Sand Hourglass", "Chime Alarm", "Unmetered Flow"]
+          },
+          "solution": {
+            "(\"Leo\", \"Mindful Anchor\")": "Breath Counting",
+            "(\"Leo\", \"Somatic Goal\")": "Calmed Heartbeat",
+            "(\"Leo\", \"Session Timer\")": "Unmetered Flow",
+            "(\"Chloe\", \"Mindful Anchor\")": "Walking Pulse",
+            "(\"Chloe\", \"Somatic Goal\")": "Relaxed Shoulders",
+            "(\"Chloe\", \"Session Timer\")": "Sand Hourglass",
+            "(\"Zane\", \"Mindful Anchor\")": "Sound Isolation",
+            "(\"Zane\", \"Somatic Goal\")": "Grounded Posture",
+            "(\"Zane\", \"Session Timer\")": "Chime Alarm"
+          },
+          "clues": [
+            ["🚶", "Clue", "Chloe checks in during movement by tracking a steady Walking Pulse."],
+            ["🫁", "Clue", "Leaning on rhythmic Breath Counting produces a noticeably Calmed Heartbeat."],
+            ["🧘", "Clue", "Zane finds stillness by locking into a firm Grounded Posture."],
+            ["🦻", "Clue", "The Walking Pulse practice is specifically used to yield a Sand Hourglass pacing standard."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -417,7 +741,34 @@
         "task_text": "Do something creative for a full hour. Draw, write, cook something experimental, arrange things, make something exist that did not before.",
         "coins": 5,
         "reward_type": "gift",
-        "room_effect": "fairy_lights"
+        "room_effect": "fairy_lights",
+        "data": {
+          "subtitle": "Capital Health",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Budget Method", "Financial Goal", "Review Cadence"],
+          "options": {
+            "Budget Method": ["Zero-Based Ledger", "Envelope Cash", "Percentage Rule"],
+            "Financial Goal": ["Travel Sinking Fund", "Emergency Vault", "Retirement Base"],
+            "Review Cadence": ["Payday Check", "Monthly Sync", "Quarterly Audit"]
+          },
+          "solution": {
+            "(\"Leo\", \"Budget Method\")": "Envelope Cash",
+            "(\"Leo\", \"Financial Goal\")": "Emergency Vault",
+            "(\"Leo\", \"Review Cadence\")": "Quarterly Audit",
+            "(\"Chloe\", \"Budget Method\")": "Zero-Based Ledger",
+            "(\"Chloe\", \"Financial Goal\")": "Travel Sinking Fund",
+            "(\"Chloe\", \"Review Cadence\")": "Payday Check",
+            "(\"Zane\", \"Budget Method\")": "Percentage Rule",
+            "(\"Zane\", \"Financial Goal\")": "Retirement Base",
+            "(\"Zane\", \"Review Cadence\")": "Monthly Sync"
+          },
+          "clues": [
+            ["📊", "Clue", "Chloe maps every incoming dollar inside a Zero-Based Ledger."],
+            ["✉️", "Clue", "Storing physical bills in an Envelope Cash stack builds out an Emergency Vault."],
+            ["📈", "Clue", "Zane configures auto-transfers into a long-range Retirement Base."],
+            ["✈️", "Clue", "The Zero-Based Ledger method is dedicated to scheduling a Payday Check routine."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -451,7 +802,34 @@
         "task_text": "Give yourself a full slow morning or evening. No rushing. Tea, something to read or draw, no agenda. A whole stretch of time that belongs entirely to you.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "soft_glow"
+        "room_effect": "soft_glow",
+        "data": {
+          "subtitle": "Community Ties",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Hangout Vibe", "Chosen Venue", "Shared Treat"],
+          "options": {
+            "Hangout Vibe": ["Book Club Circle", "Board Game Night", "Neighborhood Stroll"],
+            "Chosen Venue": ["Community Park", "Local Diner", "Botanical Garden"],
+            "Shared Treat": ["Matcha Cookies", "Fries Basket", "Herbal Cordial"]
+          },
+          "solution": {
+            "(\"Leo\", \"Hangout Vibe\")": "Board Game Night",
+            "(\"Leo\", \"Chosen Venue\")": "Local Diner",
+            "(\"Leo\", \"Shared Treat\")": "Fries Basket",
+            "(\"Chloe\", \"Hangout Vibe\")": "Book Club Circle",
+            "(\"Chloe\", \"Chosen Venue\")": "Community Park",
+            "(\"Chloe\", \"Shared Treat\")": "Matcha Cookies",
+            "(\"Zane\", \"Hangout Vibe\")": "Neighborhood Stroll",
+            "(\"Zane\", \"Chosen Venue\")": "Botanical Garden",
+            "(\"Zane\", \"Shared Treat\")": "Herbal Cordial"
+          },
+          "clues": [
+            ["📖", "Clue", "Chloe hosts an intimate Book Club Circle meeting."],
+            ["🎲", "Clue", "Running a competitive Board Game Night means meeting up at the Local Diner."],
+            ["🚶", "Clue", "Zane meets friends for a relaxed Neighborhood Stroll."],
+            ["🌳", "Clue", "The Book Club Circle stakes out room on a blanket with Matcha Cookies."]
+          ]
+        }
       },
       {
         "label": "Medium",
@@ -485,7 +863,34 @@
         "task_text": "Spend one hour on whatever you love most right now. Your thing. The one that is becoming yours. All of it, for a full hour.",
         "coins": 5,
         "reward_type": "coins",
-        "room_effect": "hobby_deepening"
+        "room_effect": "hobby_deepening",
+        "data": {
+          "subtitle": "Workspace Sort",
+          "subjects": ["Leo", "Chloe", "Zane"],
+          "attributes": ["Target Domain", "Storage System", "Labelling Type"],
+          "options": {
+            "Target Domain": ["Wardrobe Sort", "Desktop Cleanup", "Pantry Inventory"],
+            "Storage System": ["Canvas Bins", "Grid Pegboard", "Labelled Jars"],
+            "Labelling Type": ["Chalkboard Tag", "Stamped Ribbon", "Minimal Sticker"]
+          },
+          "solution": {
+            "(\"Leo\", \"Target Domain\")": "Desktop Cleanup",
+            "(\"Leo\", \"Storage System\")": "Grid Pegboard",
+            "(\"Leo\", \"Labelling Type\")": "Minimal Sticker",
+            "(\"Chloe\", \"Target Domain\")": "Wardrobe Sort",
+            "(\"Chloe\", \"Storage System\")": "Canvas Bins",
+            "(\"Chloe\", \"Labelling Type\")": "Stamped Ribbon",
+            "(\"Zane\", \"Target Domain\")": "Pantry Inventory",
+            "(\"Zane\", \"Storage System\")": "Labelled Jars",
+            "(\"Zane\", \"Labelling Type\")": "Chalkboard Tag"
+          },
+          "clues": [
+            ["👗", "Clue", "Chloe focuses her energy on an extensive Wardrobe Sort."],
+            ["🖥️", "Clue", "Conducting a thorough Desktop Cleanup uses a wall-mounted Grid Pegboard."],
+            ["🥫", "Clue", "Zane overhauls baking supplies by shifting items into Labelled Jars."],
+            ["📦", "Clue", "The Wardrobe Sort sorting layout relies on tying down Stamped Ribbon markers."]
+          ]
+        }
       },
       {
         "label": "Medium",

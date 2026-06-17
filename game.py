@@ -4,14 +4,21 @@ File location: STIMULUS/game.py  (project root, beside maingame.py)
 
 Flow:
     StartScreen --begin_story()--> LobbyScreen
-        --"Get My Letter"--> LetterScreen (current letter)
+        --"Get My Letter"--> LetterScreen (a RANDOM unused letter)
             --"See your choices"--> CardScreenApp (3 cards)
-                --card chosen, puzzle solved--> letter_complete()
-                    --> back to LobbyScreen (coins updated, next letter armed)
+                --card chosen, puzzle solved--> returns to the card screen
         --"Shop"--> ShopScreen
+
+Letter selection:
+    Letters are served in RANDOM order with no repeats. `unused_letters`
+    holds the indices not yet shown this run; each "Get My Letter" pops a
+    random one into `current_index`. This is in-memory only and resets every
+    run (no save file).
 
 Screens never reference each other. They only call back into the Game.
 """
+
+import random
 
 from eve import Eve
 from letter import Letter
@@ -28,7 +35,13 @@ class Game:
             for x in file.json_data
         ]
 
-        self.current_index = 0          # which letter we're on
+        # ---- random, no-repeat letter selection (in memory) ----
+        # Pool of letter indices not yet shown this run.
+        self.unused_letters: list[int] = list(range(len(self.letters)))
+        random.shuffle(self.unused_letters)
+        # Which letter is currently in play. None until the first pick.
+        self.current_index: int | None = None
+
         self.coins_earned_this_run = 0  # optional running tally
 
         # ---- references to live windows (kept so they aren't GC'd) ----
@@ -45,24 +58,29 @@ class Game:
         self.start_screen = StartScreen(game=self)
         self.start_screen.show()
 
+    # ── Letter pool helpers ──────────────────────────────────────────────
+    def _reset_letter_pool(self):
+        """Refill and reshuffle the unused-letter pool (new run)."""
+        self.unused_letters = list(range(len(self.letters)))
+        random.shuffle(self.unused_letters)
+        self.current_index = None
+
+    def letters_remaining(self) -> int:
+        return len(self.unused_letters)
+
     # ── Lobby (the hub) ──────────────────────────────────────────────────
     def begin_story(self):
-        """Start screen -> 'Begin Eve's Story'. Goes to the lobby."""
-        self.current_index = 0
+        """Start screen -> 'Begin Eve's Story'. Fresh pool, go to the lobby."""
+        self._reset_letter_pool()
         self.show_lobby()
 
     def continue_story(self):
         """Start screen -> 'Continue'. (Hook for save-loading later.)"""
-        # TODO: load self.current_index / self.eve from save.json
+        # TODO: load eve / unused_letters from save.json when saves exist.
         self.show_lobby()
 
     def show_lobby(self):
-        """The attic hub. Player chooses Shop or Get My Letter from here.
-
-        Everything funnels back here: after a letter's puzzle is done, and
-        after the shop closes. Closing/reopening keeps the coin badge fresh.
-        """
-        # Tidy any screens that brought us back here.
+        """The attic hub. Player chooses Shop or Get My Letter from here."""
         if self.letter_screen is not None:
             self.letter_screen.close()
             self.letter_screen = None
@@ -70,8 +88,8 @@ class Game:
             self.card_screen.close()
             self.card_screen = None
 
-        # If all letters are done, show the ending instead of the lobby.
-        if self.current_index >= len(self.letters):
+        # No letters left to give -> ending.
+        if not self.unused_letters:
             self.show_ending()
             return
 
@@ -86,20 +104,23 @@ class Game:
 
     # ── Story progression ────────────────────────────────────────────────
     def show_current_letter(self):
-        """Lobby -> 'Get My Letter'. Play the letter for current_index.
+        """Lobby -> 'Get My Letter'. Pick a RANDOM unused letter and play it.
 
-        When the letter screen's video freezes and the player taps the
-        button, it calls back to show_choices(), opening the card screen.
+        The chosen letter is removed from the pool here, so it can never be
+        served again this run. The same `current_index` is reused for that
+        letter's puzzles until the player moves on.
         """
-        if self.current_index >= len(self.letters):
-            self.show_ending()
-            return
+        # If we don't already have a letter in play, draw a new random one.
+        if self.current_index is None:
+            if not self.unused_letters:
+                self.show_ending()
+                return
+            self.current_index = self.unused_letters.pop()  # already shuffled
 
         # Leaving the lobby — close it so it isn't lingering behind.
         if self.lobby_screen is not None:
             self.lobby_screen.close()
             self.lobby_screen = None
-
         if self.card_screen is not None:
             self.card_screen.close()
             self.card_screen = None
@@ -111,9 +132,14 @@ class Game:
         self.letter_screen.show()
 
     def show_choices(self):
-        """Letter screen -> 'See your choices'. Open the card screen."""
-        if self.current_index >= len(self.letters):
-            self.show_ending()
+        """Letter screen -> 'See your choices'. Open the card screen.
+
+        Also used as the puzzles' return_cb, so finishing a puzzle drops the
+        player back onto the same letter's three cards.
+        """
+        if self.current_index is None:
+            # Safety: nothing in play (e.g. came back after ending).
+            self.show_lobby()
             return
 
         letter = self.letters[self.current_index]
@@ -122,20 +148,15 @@ class Game:
         self.card_screen = CardScreenApp(letter=letter, game=self)
         self.card_screen.show()
 
-    def letter_complete(self, coins_earned: int = 0):
-        """A card/puzzle finished. Bank coins, arm the next letter, and
-        return the player to the lobby (NOT straight into the next letter)."""
-        if coins_earned:
-            self.award_coins(coins_earned)
-
-        self.current_index += 1     # next 'Get My Letter' gives the next one
-
-        # Whether or not letters remain, we route through the lobby.
-        # show_lobby() itself shows the ending once letters run out.
+    def finish_letter(self):
+        """Call when the player is DONE with the current letter and wants the
+        next one. Clears current_index so the next 'Get My Letter' draws a new
+        random letter, then returns to the lobby (or ending)."""
+        self.current_index = None
         self.show_lobby()
 
     def show_ending(self):
-        """All letters done. Replace with a real end screen later."""
+        """All letters shown. Replace with a real end screen later."""
         print("All letters complete! Eve's story is finished for now.")
         for w in (self.card_screen, self.letter_screen, self.lobby_screen):
             if w is not None:
@@ -156,38 +177,32 @@ class Game:
         elif hasattr(self.eve, "coins"):
             self.eve.coins += amount
 
-    # ── Puzzle launching + completion ────────────────────────────────────
-    def launch_puzzle(self, puzzle_id: int, coins_on_win: int = 0):
-        """Open the puzzle for a chosen card and wire its completion back
-        into letter_complete(). Called by the card screen's show_puzzle()."""
-        # Card screen has done its job; close it so the puzzle is alone.
+    # ── Puzzle launching ─────────────────────────────────────────────────
+    def launch_puzzle(self, puzzle_id, coins_on_win=0, card_data=None):
         if self.card_screen is not None:
             self.card_screen.close()
             self.card_screen = None
 
-        if puzzle_id == 1:
+        if puzzle_id == 1:        # Big -> logigrame
             from puzzles.logigrame import MainWindow
-            self.puzzle_win = MainWindow()
-        elif puzzle_id == 2:
-            from puzzles.wordpicker import WordSearchGame
-            self.puzzle_win = WordSearchGame()
-        else:
-            # Card 3 (reflection) placeholder until that screen exists.
-            from puzzles.logigrame import MainWindow
-            self.puzzle_win = MainWindow()
-
-        # If the puzzle exposes a `completed` signal, finishing it advances
-        # the story automatically (-> letter_complete -> lobby).
-        if hasattr(self.puzzle_win, "completed"):
-            self.puzzle_win.completed.connect(
-                lambda earned=coins_on_win: self.on_puzzle_completed(earned)
-            )
+            self.puzzle_win = MainWindow(data=card_data, coins=coins_on_win,
+                                         game=self, return_cb=self.show_choices)
+        elif puzzle_id == 2:      # Medium -> sequence
+            from puzzles.sequence_game import SequenceGame
+            self.puzzle_win = SequenceGame(data=card_data, coins=coins_on_win,
+                                           game=self, return_cb=self.show_choices)
+        else:                     # Tiny -> reflection (later)
+            from puzzles.sequence_game import SequenceGame
+            self.puzzle_win = SequenceGame(data=card_data, coins=coins_on_win,
+                                           game=self, return_cb=self.show_choices)
 
         self.puzzle_win.show()
 
     def on_puzzle_completed(self, coins_earned: int = 0):
-        """Handler the puzzle's `completed` signal calls."""
+        """Legacy hook. The puzzles now award coins and route back to the
+        card screen themselves, so this is only used if you reconnect the
+        `completed` signal to advance past a letter instead."""
         if self.puzzle_win is not None:
             self.puzzle_win.close()
             self.puzzle_win = None
-        self.letter_complete(coins_earned)   # banks coins, returns to lobby
+        self.finish_letter()

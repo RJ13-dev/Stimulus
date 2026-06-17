@@ -28,7 +28,7 @@ from PySide6.QtGui import (
 
 BASE_DIR  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSET_DIR = os.path.join(BASE_DIR, "assets")
-BG_PATH   = os.path.join(ASSET_DIR, "lobby.png")
+BG_PATH   = os.path.join(ASSET_DIR, "lobby2.png")
 
 # lobby.png is wide (≈1.9:1). Use a matching 16:9-ish window.
 W, H = 1100, 620
