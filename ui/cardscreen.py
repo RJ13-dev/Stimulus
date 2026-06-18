@@ -76,64 +76,86 @@ class WoodenButton(QWidget):
         p.end()
 
 
+# ─────────────────────────────────────────────────────────────────────────
+#  Redesigned Luxury Card UI
+# ─────────────────────────────────────────────────────────────────────────
 class PuzzleCard(QWidget):
     def __init__(self, title, text, puzzle_id, parent=None):
         super().__init__(parent)
-        self.setFixedSize(360, 470)
+        # Optimized sizing to comfortably sit within the 650px window height
+        self.setFixedSize(300, 350)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground, True)
         self.is_sliding = False
         self.is_hovered = False
         self.expected_center_y = 0
 
+        # High fidelity deep atmosphere shadow
         self.shadow = QGraphicsDropShadowEffect()
-        self.shadow.setBlurRadius(45)
+        self.shadow.setBlurRadius(35)
         self.shadow.setXOffset(0)
-        self.shadow.setYOffset(16)
-        self.shadow.setColor(QColor(15, 8, 0, 220))
+        self.shadow.setYOffset(12)
+        self.shadow.setColor(QColor(5, 2, 0, 1140))
         self.setGraphicsEffect(self.shadow)
 
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(34, 46, 34, 40)
+        layout.setContentsMargins(32, 36, 32, 36)
+        layout.setSpacing(0)
 
+        # Crisp, warm white title
         title_label = QLabel(title)
-        title_label.setFont(QFont("Georgia", 22, QFont.Bold))
-        title_label.setStyleSheet("color: #fffdf5; background: transparent; letter-spacing: 1px;")
+        title_label.setFont(QFont("Georgia", 24, QFont.Bold))
+        title_label.setStyleSheet("color: #fffaf0; background: transparent; letter-spacing: 1px;")
         title_label.setAlignment(Qt.AlignCenter)
-        title_label.setWordWrap(True)
 
+        # Elegant star separator matching the color motif
         divider = QLabel("\u2756")
-        divider.setFont(QFont("Georgia", 14))
-        divider.setStyleSheet("color: #ffd167; background: transparent;")
+        divider.setFont(QFont("Georgia", 12))
+        divider.setStyleSheet("color: #e5c158; background: transparent; opacity: 0.85;")
         divider.setAlignment(Qt.AlignCenter)
 
+        # Muted champagne text layout with tailored readability rules
         text_label = QLabel(text)
         text_label.setFont(QFont("Calibri", 13))
-        text_label.setStyleSheet("color: #e6dad0; background: transparent; line-height: 150%;")
+        text_label.setStyleSheet("""
+            color: #dfd5ca; 
+            background: transparent; 
+            line-height: 140%;
+        """)
         text_label.setAlignment(Qt.AlignCenter)
         text_label.setWordWrap(True)
 
-        self.puzzle_button = QPushButton("Solve Puzzle")
-        self.puzzle_button.setFont(QFont("Arial", 11, QFont.Bold))
-        self.puzzle_button.setCursor(Qt.PointingHandCursor)
-        self.puzzle_button.setStyleSheet("""
-            QPushButton {
-                background-color: #ffd167;
-                color: #1c1206;
-                border: none;
-                border-radius: 24px;
-                padding: 13px;
-                letter-spacing: 2px;
-            }
-            QPushButton:hover {
-                background-color: #fff2cc;
-                color: #261a0a;
-            }
-        """)
+        self.puzzle_button = WoodenButton("Solve Puzzle", width=200, parent=self)
+        # self.puzzle_button = QPushButton("SOLVE PUZZLE")
+        # self.puzzle_button.setFont(QFont("Arial", 10, QFont.Bold))
+        # self.puzzle_button.setCursor(Qt.PointingHandCursor)
+        # self.puzzle_button.setMinimumHeight(44)
+        
+        #     QPushButton {
+        #         background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        #                                     stop:0 #f3d681, stop:1 #d9b44a);
+        #         color: #1a1107;
+        #         border: 1px solid #b89530;
+        #         border-radius: 22px;
+        #         letter-spacing: 2px;
+        #         font-weight: bold;
+        #     }
+        #     QPushButton:hover {
+        #         background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        #                                     stop:0 #fff0c2, stop:1 #eac45d);
+        #         color: #100a04;
+        #         border: 1px solid #d4af37;
+        #     }
+        #     QPushButton:pressed {
+        #         background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        #                                     stop:0 #d9b44a, stop:1 #b89530);
+        #         padding-top: 2px;
+        #     }
+        # """)
         self.puzzle_button.clicked.connect(
             lambda checked=False, p_id=puzzle_id: self.window().show_puzzle(p_id))
 
         layout.addWidget(title_label)
-        layout.addSpacing(10)
+        layout.addSpacing(8)
         layout.addWidget(divider)
         layout.addStretch(1)
         layout.addWidget(text_label)
@@ -141,41 +163,44 @@ class PuzzleCard(QWidget):
         layout.addWidget(self.puzzle_button)
 
         self.hover_anim = QPropertyAnimation(self, b"pos")
-        self.hover_anim.setDuration(220)
+        self.hover_anim.setDuration(200)
         self.hover_anim.setEasingCurve(QEasingCurve.OutCubic)
 
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
         rect = QRectF(2, 2, self.width() - 4, self.height() - 4)
-        radius = 22
+        radius = 24
 
+        # Premium Dark Charcoal-Amber Palette
         grad = QLinearGradient(0, rect.top(), 0, rect.bottom())
-        grad.setColorAt(0.0, QColor(45, 35, 30, 215))
-        grad.setColorAt(1.0, QColor(25, 20, 15, 185))
+        grad.setColorAt(0.0, QColor(35, 27, 20, 240))
+        grad.setColorAt(1.0, QColor(22, 17, 13, 220))
 
         path = QPainterPath()
         path.addRoundedRect(rect, radius, radius)
         painter.fillPath(path, QBrush(grad))
 
-        painter.setPen(QPen(QColor(110, 85, 65, 120), 2))
+        # Fine, high-contrast outer border
+        painter.setPen(QPen(QColor(115, 95, 75, 140), 1.5))
         painter.drawPath(path)
 
+        # Delicate internal golden accent pinstripe
         inner = QRectF(rect.left() + 6, rect.top() + 6, rect.width() - 12, rect.height() - 12)
         inner_path = QPainterPath()
         inner_path.addRoundedRect(inner, radius - 6, radius - 6)
-        painter.setPen(QPen(QColor(255, 245, 230, 35), 1.5))
+        painter.setPen(QPen(QColor(229, 193, 88, 40), 1.0))
         painter.drawPath(inner_path)
 
     def enterEvent(self, event):
         if self.is_sliding:
             super().enterEvent(event); return
         self.is_hovered = True
-        self.shadow.setBlurRadius(60)
+        self.shadow.setBlurRadius(50)
         curr_x = self.pos().x()
         self.hover_anim.stop()
         self.hover_anim.setStartValue(self.pos())
-        self.hover_anim.setEndValue(QPoint(curr_x, self.expected_center_y - 14))
+        self.hover_anim.setEndValue(QPoint(curr_x, self.expected_center_y - 12))
         self.hover_anim.start()
         super().enterEvent(event)
 
@@ -183,7 +208,7 @@ class PuzzleCard(QWidget):
         if self.is_sliding:
             super().leaveEvent(event); return
         self.is_hovered = False
-        self.shadow.setBlurRadius(45)
+        self.shadow.setBlurRadius(35)
         curr_x = self.pos().x()
         self.hover_anim.stop()
         self.hover_anim.setStartValue(self.pos())
@@ -206,11 +231,10 @@ class CardScreenApp(QWidget):
         self.init_ui()
 
     def _build_card_data(self):
-        """Return a list of (title, text, puzzle_id) for the 3 cards."""
         return [
             ("Hard", "Play the logigrame, test your skills and get 50 coins.", 1),
             ("Medium", "Play the sequence game, test your skills and get 30 coins.", 2),
-            ("Easy", "Escape from this letter but remember no coins no shopping", 3),
+            ("Easy", "Escape from this letter but remember no coins means no shopping.", 3),
         ]
 
     def init_ui(self):
@@ -236,11 +260,11 @@ class CardScreenApp(QWidget):
         self.left_arrow = QPushButton("\u2039", self)
         self.right_arrow = QPushButton("\u203a", self)
         arrow_style = """
-            QPushButton { background-color: rgba(20, 12, 4, 110); color: #ffd167;
-                border: 2px solid rgba(255, 209, 103, 160); border-radius: 26px;
-                font-size: 26px; font-weight: bold; padding-bottom: 4px; }
-            QPushButton:hover { background-color: rgba(255, 209, 103, 235);
-                color: #1c1206; border: 2px solid #ffe6a8; }
+            QPushButton { background-color: rgba(20, 12, 4, 140); color: #e5c158;
+                border: 2px solid rgba(229, 193, 88, 140); border-radius: 26px;
+                font-size: 28px; font-weight: bold; padding-bottom: 5px; }
+            QPushButton:hover { background-color: #e5c158;
+                color: #1a1107; border: 2px solid #fff0c2; }
         """
         self.left_arrow.setFixedSize(52, 52)
         self.right_arrow.setFixedSize(52, 52)
@@ -251,7 +275,6 @@ class CardScreenApp(QWidget):
         self.left_arrow.clicked.connect(self.show_previous_card)
         self.right_arrow.clicked.connect(self.show_next_card)
 
-        # ---- wooden Exit-to-Lobby button (top-left) ----
         self.exit_btn = WoodenButton("Exit to Lobby", width=190, parent=self)
         self.exit_btn.move(28, 24)
         self.exit_btn.clicked.connect(self._exit_to_lobby)
@@ -260,11 +283,9 @@ class CardScreenApp(QWidget):
         self.update_card_positions(animate=False)
 
     def _exit_to_lobby(self):
-        """Leave this letter and return to the lobby. Frees the current
-        letter so the next 'Get My Letter' draws a new random one."""
         if self.game is not None:
             if hasattr(self.game, "finish_letter"):
-                self.game.finish_letter()   # clears current_index -> lobby
+                self.game.finish_letter()
             elif hasattr(self.game, "show_lobby"):
                 self.game.show_lobby()
             self.close()
@@ -272,20 +293,13 @@ class CardScreenApp(QWidget):
             print("Exit to lobby (no game controller — run via maingame.py)")
 
     def update_card_positions(self, animate=True, coming_from_right=True):
-        center_x = (self.width() - 360) // 2
-        center_y = (self.height() - 470) // 2 + 40
-        self.left_arrow.move(center_x - 84, center_y + 209)
-        self.right_arrow.move(center_x + 360 + 32, center_y + 209)
-
-        if len(self.bulbs) >= 6:
-            self.bulbs[0].move(center_x + 125, center_y - 160)
-            self.bulbs[1].move(40, 20)
-            self.bulbs[2].move(self.width() - 150, 20)
-            self.bulbs[3].move(200, 10)
-            self.bulbs[4].move(self.width() - 310, 10)
-            self.bulbs[5].move(15, 240)
-            for b in self.bulbs:
-                b.raise_()
+        card_w, card_h = 340, 400
+        center_x = (self.width() - card_w) // 2
+        center_y = (self.height() - card_h) // 2 + 30
+        
+        # Center arrows beautifully flanking the new card proportions
+        self.left_arrow.move(center_x - 80, center_y + (card_h // 2) - 26)
+        self.right_arrow.move(center_x + card_w + 28, center_y + (card_h // 2) - 26)
 
         for idx, card in enumerate(self.cards):
             card.expected_center_y = center_y
@@ -293,11 +307,11 @@ class CardScreenApp(QWidget):
                 card.show()
                 card.raise_()
                 if animate:
-                    start_x = self.width() if coming_from_right else -360
+                    start_x = self.width() if coming_from_right else -card_w
                     card.move(QPoint(start_x, center_y))
                     card.is_sliding = True
                     self.anim = QPropertyAnimation(card, b"pos")
-                    self.anim.setDuration(480)
+                    self.anim.setDuration(450)
                     self.anim.setStartValue(QPoint(start_x, center_y))
                     self.anim.setEndValue(QPoint(center_x, center_y))
                     self.anim.setEasingCurve(QEasingCurve.OutQuint)
@@ -332,15 +346,12 @@ class CardScreenApp(QWidget):
         self.update_card_positions(animate=False)
         super().resizeEvent(event)
 
-    COINS_BY_CARD = {1: 8, 2: 5, 3: 2}
-
     def show_puzzle(self, puzzle_id):
-        # Easy / reflection card (id 3): no puzzle — just leave the letter.
         if puzzle_id == 3:
             self._exit_to_lobby()
             return
 
-        card = self.letter.cards[self.current_index]   # the Card just chosen
+        card = self.letter.cards[self.current_index]
         coins = card.get("coins", 0) if isinstance(card, dict) else getattr(card, "coins", 0)
         data  = card.get("data") if isinstance(card, dict) else getattr(card, "data", None)
         if self.game is not None:
