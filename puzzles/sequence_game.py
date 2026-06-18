@@ -332,7 +332,7 @@ class SequenceGame(QMainWindow):
     def __init__(self, data=None, coins=DEFAULT_COINS, game=None, return_cb=None):
         super().__init__()
         self.data = data or DEFAULT_DATA
-        self.coins_award = int(coins)
+        self.coins_award = 30
         self.game = game
         self.return_cb = return_cb
         self.lives = MAX_LIVES

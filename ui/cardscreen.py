@@ -160,7 +160,7 @@ class PuzzleCard(QWidget):
         layout.addStretch(1)
         layout.addWidget(text_label)
         layout.addStretch(1)
-        layout.addWidget(self.puzzle_button)
+        layout.addWidget(self.puzzle_button, alignment=Qt.AlignHCenter)
 
         self.hover_anim = QPropertyAnimation(self, b"pos")
         self.hover_anim.setDuration(200)
@@ -293,7 +293,7 @@ class CardScreenApp(QWidget):
             print("Exit to lobby (no game controller — run via maingame.py)")
 
     def update_card_positions(self, animate=True, coming_from_right=True):
-        card_w, card_h = 340, 400
+        card_w, card_h = 300, 350
         center_x = (self.width() - card_w) // 2
         center_y = (self.height() - card_h) // 2 + 30
         
